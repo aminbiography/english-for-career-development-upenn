@@ -46,10 +46,10 @@ Each section integrates:
 ---
 
 ## Project Structure
-
+```
 ├── index.html
 └── README.md
-
+```
 
 - `index.html` — Main application file containing HTML structure and embedded CSS  
 - `README.md` — Project documentation  
