@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English for Career Development | Summary Notes</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --line: #d8dee8;
+
+      --u1: #4f86c6;
+      --u2: #2f9e8f;
+      --u3: #8b5fbf;
+      --u4: #e28a2e;
+      --u5: #d84d6a;
+
+      --soft-u1: #e8f0fa;
+      --soft-u2: #e6f6f3;
+      --soft-u3: #f1eafb;
+      --soft-u4: #fdf0e2;
+      --soft-u5: #fde9ee;
+
+      --shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffffff 0%, #f4f6f8 42%, #edf1f5 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 48px 0 24px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #1f3d68 0%, #335d96 55%, #4f86c6 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 42px 34px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .hero-card::before {
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      top: -90px;
+    }
+
+    .hero-card::after {
+      width: 180px;
+      height: 180px;
+      left: -40px;
+      bottom: -60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 246, 248, 0.85);
+      border-bottom: 1px solid rgba(216, 222, 232, 0.9);
+    }
+
+    .top-nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(16, 24, 40, 0.08);
+    }
+
+    .overview {
+      padding: 28px 0 12px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0 0 22px;
+      max-width: 840px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .summary-card {
+      grid-column: span 4;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .units {
+      padding: 20px 0 34px;
+    }
+
+    .unit-card {
+      grid-column: span 6;
+      background: var(--panel);
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .unit-head {
+      padding: 18px 22px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .unit-head h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .unit-label {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.94;
+    }
+
+    .unit-body {
+      padding: 22px;
+    }
+
+    .unit-body p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .mini {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .mini h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .mini ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .mini li {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .u1 .unit-head { background: linear-gradient(135deg, #3f73b0, var(--u1)); }
+    .u2 .unit-head { background: linear-gradient(135deg, #22897c, var(--u2)); }
+    .u3 .unit-head { background: linear-gradient(135deg, #7548a8, var(--u3)); }
+    .u4 .unit-head { background: linear-gradient(135deg, #cb7320, var(--u4)); }
+    .u5 .unit-head { background: linear-gradient(135deg, #bc3856, var(--u5)); }
+
+    .u1 .mini { background: var(--soft-u1); }
+    .u2 .mini { background: var(--soft-u2); }
+    .u3 .mini { background: var(--soft-u3); }
+    .u4 .mini { background: var(--soft-u4); }
+    .u5 .mini { background: var(--soft-u5); }
+
+    .timeline {
+      padding: 8px 0 34px;
+    }
+
+    .timeline-wrap {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+    }
+
+    .timeline-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      align-items: start;
+      position: relative;
+    }
+
+    .timeline-bar::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 4%;
+      right: 4%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--u1), var(--u2), var(--u3), var(--u4), var(--u5));
+      border-radius: 999px;
+      z-index: 0;
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .dot {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      margin: 0 auto 12px;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(16, 24, 40, 0.1);
+    }
+
+    .step h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .portfolio {
+      padding: 0 0 42px;
+    }
+
+    .portfolio-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .portfolio-box li {
+      margin: 8px 0;
+    }
+
+    footer {
+      padding: 0 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-card {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 1100px) {
+      .summary-card {
+        grid-column: span 6;
+      }
+
+      .unit-card {
+        grid-column: span 12;
+      }
+
+      .timeline-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-bar::before {
+        display: none;
+      }
+
+      .step {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .dot {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .summary-card {
+        grid-column: span 12;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 30px 22px;
+      }
+
+      .pill,
+      .chip {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="eyebrow">Portfolio Summary Note</div>
+        <h1 style="margin: 0 0 12px;">
+        English for Career Development
+        </h1>
+
+        <h2 style="margin: 0; font-weight: 500;">
+        University of Pennsylvania
+        </h2>
+
+        <p style="margin: 10px 0 0; font-size: 14px; color: rgba(255,255,255,0.85);">
+        In collaboration with U.S. Department of State –
+        <span style="font-weight: 700; color: #ffffff;">
+            American English
+        </span>
+        </p>
+
+        <p style="margin: 6px 0 0; font-size: 14px; color: rgba(255,255,255,0.85);">
+        Instructors: Robyn Turner · Brian McManus
+        </p>
+
+        <p style="margin: 4px 0 0; font-size: 12px; color: rgba(255,255,255,0.9);">
+        Delivered via Coursera (Online Learning Platform)
+        </p>
+
+        <p style="margin: 12px 0 0; max-width: 760px; font-size: 17px; color: rgba(255,255,255,0.92);">
+        A summary application presenting the five core units of the course:
+        job market entry, résumé writing, cover letter writing, networking, and job interview preparation.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a class="chip" href="#overview">Overview</a>
+      <a class="chip" href="#timeline">Career Path</a>
+      <a class="chip" href="#unit1">Unit 1</a>
+      <a class="chip" href="#unit2">Unit 2</a>
+      <a class="chip" href="#unit3">Unit 3</a>
+      <a class="chip" href="#unit4">Unit 4</a>
+      <a class="chip" href="#unit5">Unit 5</a>
+      <a class="chip" href="#portfolio">Portfolio Use</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview" class="overview">
+      <div class="container">
+        <h2 class="section-title">Course Overview</h2>
+        <p class="lead">
+          This page is designed as a concise presentation note for GitHub or portfolio use.
+          It turns the course into a visual study summary with clear unit goals, practical skills,
+          and job-application workflow.
+        </p>
+
+        <div class="grid">
+          <article class="summary-card">
+            <h3>Five-Unit Structure</h3>
+            <p>
+              The course progresses through five major stages of career development, from understanding the job market to handling interviews.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h3>Language + Career Skills</h3>
+            <p>
+              Each unit combines English practice with practical career tasks such as reading job ads, writing documents, networking, and answering interview questions.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h3>Portfolio Friendly</h3>
+            <p>
+              This format works well as a static GitHub Pages project, a screenshot-based submission, or a personal learning archive.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline">
+      <div class="container">
+        <div class="timeline-wrap">
+          <h2 class="section-title">Career Development Path</h2>
+          <div class="timeline-bar">
+            <div class="step">
+              <div class="dot" style="background: var(--u1);"></div>
+              <div>
+                <h4>1. Enter the Job Market</h4>
+                <p>Identify skills, interests, and job-search steps.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="dot" style="background: var(--u2);"></div>
+              <div>
+                <h4>2. Build a Résumé</h4>
+                <p>Organize qualifications, keywords, and action verbs.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="dot" style="background: var(--u3);"></div>
+              <div>
+                <h4>3. Write a Cover Letter</h4>
+                <p>Present personal style, qualifications, and interview request.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="dot" style="background: var(--u4);"></div>
+              <div>
+                <h4>4. Network Professionally</h4>
+                <p>Use small talk, professional relationships, and elevator speech.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="dot" style="background: var(--u5);"></div>
+              <div>
+                <h4>5. Interview for a Job</h4>
+                <p>Prepare examples, ask questions, and make a professional impression.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="units">
+      <div class="container">
+        <div class="grid">
+
+          <article id="unit1" class="unit-card u1">
+            <div class="unit-head">
+              <div>
+                <div class="unit-label">Unit 1</div>
+                <h3>Entering the Job Market</h3>
+              </div>
+            </div>
+            <div class="unit-body">
+              <p>
+                Focuses on the U.S. job-search process, professional interests, job-market awareness,
+                job-search vocabulary, and compare/contrast language structures.
+              </p>
+              <div class="two-col">
+                <div class="mini">
+                  <h4>Main Skills</h4>
+                  <ul>
+                    <li>Identify job-search steps</li>
+                    <li>Understand career interests and skills</li>
+                    <li>Read job advertisements</li>
+                  </ul>
+                </div>
+                <div class="mini">
+                  <h4>Language Focus</h4>
+                  <ul>
+                    <li>Simple present</li>
+                    <li>Present progressive</li>
+                    <li>Compare and contrast phrases</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="unit2" class="unit-card u2">
+            <div class="unit-head">
+              <div>
+                <div class="unit-label">Unit 2</div>
+                <h3>Résumés</h3>
+              </div>
+            </div>
+            <div class="unit-body">
+              <p>
+                Explains the purpose of a résumé, the structure of an American-style résumé,
+                and the use of action verbs and keywords to communicate qualifications clearly.
+              </p>
+              <div class="two-col">
+                <div class="mini">
+                  <h4>Main Skills</h4>
+                  <ul>
+                    <li>Recognize key résumé components</li>
+                    <li>Produce a one-page résumé</li>
+                    <li>Match qualifications to a job ad</li>
+                  </ul>
+                </div>
+                <div class="mini">
+                  <h4>Language Focus</h4>
+                  <ul>
+                    <li>Action verbs</li>
+                    <li>Key words</li>
+                    <li>Clear achievement statements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="unit3" class="unit-card u3">
+            <div class="unit-head">
+              <div>
+                <div class="unit-label">Unit 3</div>
+                <h3>Writing a Cover Letter</h3>
+              </div>
+            </div>
+            <div class="unit-body">
+              <p>
+                Introduces formal job-application writing, including heading, greeting,
+                introduction, body paragraphs, and closing. It also emphasizes adapting each letter to the job.
+              </p>
+              <div class="two-col">
+                <div class="mini">
+                  <h4>Main Skills</h4>
+                  <ul>
+                    <li>Understand cover-letter structure</li>
+                    <li>Connect skills to job description</li>
+                    <li>Formally request an interview</li>
+                  </ul>
+                </div>
+                <div class="mini">
+                  <h4>Language Focus</h4>
+                  <ul>
+                    <li>Past tense</li>
+                    <li>Present perfect</li>
+                    <li>Modal verbs for politeness</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="unit4" class="unit-card u4">
+            <div class="unit-head">
+              <div>
+                <div class="unit-label">Unit 4</div>
+                <h3>Networking Skills</h3>
+              </div>
+            </div>
+            <div class="unit-body">
+              <p>
+                Covers networking as relationship building, the hidden job market,
+                professional small talk, and the elevator speech as a concise professional introduction.
+              </p>
+              <div class="two-col">
+                <div class="mini">
+                  <h4>Main Skills</h4>
+                  <ul>
+                    <li>Build professional relationships</li>
+                    <li>Prepare an elevator speech</li>
+                    <li>Use networking for job discovery</li>
+                  </ul>
+                </div>
+                <div class="mini">
+                  <h4>Language Focus</h4>
+                  <ul>
+                    <li>Stress and rhythm</li>
+                    <li>Intonation</li>
+                    <li>Clear spoken introduction</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="unit5" class="unit-card u5" style="grid-column: span 12;">
+            <div class="unit-head">
+              <div>
+                <div class="unit-label">Unit 5</div>
+                <h3>Interviewing for a Job</h3>
+              </div>
+            </div>
+            <div class="unit-body">
+              <p>
+                Focuses on interview questions, interviewer and interviewee roles,
+                clarification strategies, short examples from past experience,
+                and professional presentation during interviews.
+              </p>
+              <div class="two-col">
+                <div class="mini">
+                  <h4>Main Skills</h4>
+                  <ul>
+                    <li>Answer interview questions clearly</li>
+                    <li>Prepare examples from past work or study</li>
+                    <li>Ask relevant questions to the interviewer</li>
+                  </ul>
+                </div>
+                <div class="mini">
+                  <h4>Language Focus</h4>
+                  <ul>
+                    <li>Question types</li>
+                    <li>Clarification and repetition</li>
+                    <li>Brief, specific answers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="portfolio-box">
+        <h2 class="section-title">Course Reflection</h2>
+        <p>
+            This course enhanced my understanding of the complete job application process, including both new opportunities and career transitions, and strengthened my ability to communicate professionally in English. I developed practical, up-to-date skills in résumé writing, cover letter preparation, networking, and interview communication. The integration of language development with career strategy made the course highly relevant to real-world professional environments. It also improved my confidence in presenting my skills and experiences clearly and effectively.
+        </p>
+        </div>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="container footer-card">
+    <p>
+      © 2025–2026 Mohammad Aminul Islam | All Rights Reserved
+    </p>
+  </div>
+</footer>
+</body>
+</html>
