@@ -46,6 +46,7 @@ Each section integrates:
 ---
 
 ## Project Structure
+
 ├── index.html
 └── README.md
 
