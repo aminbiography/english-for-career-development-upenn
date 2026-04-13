@@ -59,3 +59,7 @@ Each section integrates:
 
 ---
 
+© Mohammad Aminul Islam. All rights reserved.
+
+---
+
